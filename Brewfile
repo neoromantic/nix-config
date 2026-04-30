@@ -93,8 +93,6 @@ brew "mas"
 brew "mysql"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-# General-purpose speech recognition model
-brew "openai-whisper"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # Package compiler and linker metadata toolkit
