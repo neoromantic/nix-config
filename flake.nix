@@ -2,19 +2,20 @@
   description = "Goodit Book Configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-25.05-darwin";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     nix-darwin = {
-      url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
+      url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/3";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, determinate }:
   let
     configuration = { pkgs, ... }: {
-      # Determinate Nix manages the daemon itself.
-      nix.enable = false;
+      determinateNix.enable = true;
 
       nixpkgs.config.allowUnfree = true;
       nixpkgs.hostPlatform = "aarch64-darwin";
@@ -107,7 +108,10 @@
   in
   {
     darwinConfigurations.gooditbook = nix-darwin.lib.darwinSystem {
-      modules = [ configuration ];
+      modules = [
+        determinate.darwinModules.default
+        configuration
+      ];
     };
   };
 }
