@@ -117,6 +117,8 @@ brew "sevenzip"
 brew "sheldon"
 # Cross-shell prompt for astronauts
 brew "starship"
+# Feature-rich command-line audio/video downloader
+brew "yt-dlp"
 # Multi-modal AI tool to extract and summarize content
 brew "summarize"
 # Official tldr client written in Rust
@@ -129,8 +131,6 @@ brew "worktrunk"
 brew "xcodegen"
 # Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
-# Feature-rich command-line audio/video downloader
-brew "yt-dlp"
 # Pluggable terminal workspace, with terminal multiplexer as the base feature
 brew "zellij"
 # Shell extension to navigate your filesystem faster
@@ -150,7 +150,7 @@ brew "oven-sh/bun/bun"
 # Opinionated workflow tool that orchestrates git worktrees and tmux
 brew "raine/workmux/workmux"
 # CLI tool for linear.app that uses git branch names and directory names to open issues and team pages
-brew "schpet/tap/linear"
+brew "schpet/tap/linear", link: false
 # Fast X CLI for tweeting, replying, and reading
 brew "steipete/tap/bird"
 # Google CLI for Gmail, Calendar, Drive, Docs, Sheets, and more
@@ -181,43 +181,81 @@ cask "nikitabobko/tap/aerospace"
 cask "arc"
 # Compact TeX distribution as alternative to the full TeX Live / MacTeX
 cask "basictex"
+# Calendar software focusing on flexibility and reliability
+cask "busycal"
+# E-books management software
+cask "calibre"
+# OpenAI's official ChatGPT desktop app
+cask "chatgpt"
+# Anthropic's official Claude AI desktop app
+cask "claude"
 # OpenAI's coding agent that runs in your terminal
 cask "codex"
 # Menu bar usage monitor for Codex and Claude
 cask "steipete/tap/codexbar"
 # Write, edit, and chat about your code with AI
 cask "cursor"
+# Collaborative team software
+cask "figma"
 cask "font-symbols-only-nerd-font"
 # Set of tools to manage resources and applications hosted on Google Cloud
 cask "gcloud-cli"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Web browser
+cask "google-chrome"
 # Graphically shows disk usage within a file system
 cask "grandperspective"
+# Open-source video transcoder
+cask "handbrake-app"
 # Free and open-source media player
 cask "iina"
 # Menu bar manager
 cask "jordanbaird-ice"
 # App to manage software development and track bugs
 cask "linear"
+# Discover, download, and run local LLMs
+cask "lm-studio"
+# Mouse utility to add gesture functions and smooth scrolling to 3rd party mice
+cask "mac-mouse-fix"
+# Native app email client for Gmail
+cask "mimestream"
 # App to write, plan, collaborate, and get organised
 cask "notion"
 # Calendar for professionals and teams
 cask "notion-calendar"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
 # Replacement for Docker Desktop
 cask "orbstack"
+# Database GUI
+cask "outerbase-studio"
 # Peer to peer Bitorrent client
 cask "qbittorrent"
 # Control your tools with a few keystrokes
 cask "raycast"
 # Porting tool, to make Windows programs/games into native apps
 cask "sikarugir-app/sikarugir/sikarugir"
+# Music streaming service
+cask "spotify"
 # System monitor for the menu bar
 cask "stats"
+# Open-source media center
+cask "stremio"
+# Real time file synchronisation software
+cask "syncthing-app"
+# Multi-platform VNC client and server
+cask "tigervnc"
+# Voice to text app
+cask "voiceink"
 # Native desktop client for WhatsApp
 cask "whatsapp"
 # Menu bar Wi-Fi monitor and diagnostics app
 cask "whyfi"
+# Cloud storage
+cask "yandex-disk"
+# Video communication and virtual meeting platform
+cask "zoom"
 mas "1Password for Safari", id: 1569813296
 mas "Amphetamine", id: 937984704
 mas "Backtrack", id: 1477089520
