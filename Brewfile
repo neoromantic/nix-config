@@ -8,6 +8,7 @@ tap "jordond/tap"
 tap "kfastov/tap"
 tap "marcus/tap"
 tap "nikitabobko/tap"
+tap "oven-sh/bun"
 tap "raine/workmux"
 tap "schpet/tap"
 tap "sikarugir-app/sikarugir"
@@ -54,8 +55,6 @@ brew "ffmpeg"
 brew "ffmpeg-full"
 # Command-line fuzzy finder written in Go
 brew "fzf"
-# Interact with Google Gemini AI models from the command-line
-brew "gemini-cli"
 # GitHub command-line tool
 brew "gh"
 # Interpreter for PostScript and PDF
@@ -92,22 +91,16 @@ brew "mactop"
 brew "mas"
 # Open source relational database management system
 brew "mysql"
-# Open source relational database management system
-brew "mysql-client"
-# Open source relational database management system
-brew "mysql-client@8.4"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # General-purpose speech recognition model
 brew "openai-whisper"
-# Search tool like grep and The Silver Searcher
-brew "ripgrep"
-# AI coding agent, built for the terminal
-brew "opencode"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
+# Fast, disk space efficient package manager
+brew "pnpm"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
 # Object-relational database system
@@ -116,6 +109,8 @@ brew "postgresql@16"
 brew "qsv"
 # SVG rendering tool and library
 brew "resvg"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
 # CLI proxy to minimize LLM token consumption
 brew "rtk"
 # 7-Zip is a file archiver with a high compression ratio
@@ -144,8 +139,6 @@ brew "zellij"
 brew "zoxide"
 # Telegram MCP server for AI assistants
 brew "chaindead/tap/telegram-mcp"
-# A powerful terminal-based AI assistant for developers, providing intelligent coding assistance directly in your terminal.
-brew "charmbracelet/tap/crush"
 # Interactive TUI for Homebrew
 brew "gromgit/brewtils/taproom"
 # Creates screenshots based on terminal command output.
@@ -154,8 +147,8 @@ brew "homeport/tap/termshot"
 brew "jordond/tap/jolt"
 # Telegram CLI + MCP server
 brew "kfastov/tap/tgcli"
-# AI coding agent runner for overnight maintenance tasks
-brew "marcus/tap/nightshift"
+# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+brew "oven-sh/bun/bun"
 # Opinionated workflow tool that orchestrates git worktrees and tmux
 brew "raine/workmux/workmux"
 # CLI tool for linear.app that uses git branch names and directory names to open issues and team pages
@@ -166,8 +159,6 @@ brew "steipete/tap/bird"
 brew "steipete/tap/gogcli"
 # Modern Go client + CLI for the Google Places API (New)
 brew "steipete/tap/goplaces"
-# Bundle prompts + files for second-model review
-brew "steipete/tap/oracle"
 # Lightning-fast macOS screenshots & AI vision analysis
 brew "steipete/tap/peekaboo"
 # Fast CLI for Apple Reminders
@@ -188,8 +179,6 @@ cask "1password"
 cask "1password-cli"
 # AeroSpace is an i3-like tiling window manager for macOS
 cask "nikitabobko/tap/aerospace"
-# Utility to add Dynamic Island like features to notch area
-cask "alcove"
 # Chromium based browser
 cask "arc"
 # Compact TeX distribution as alternative to the full TeX Live / MacTeX
@@ -200,15 +189,11 @@ cask "codex"
 cask "steipete/tap/codexbar"
 # Write, edit, and chat about your code with AI
 cask "cursor"
-# App to build and share containerised applications and microservices
-cask "docker-desktop"
 cask "font-symbols-only-nerd-font"
 # Set of tools to manage resources and applications hosted on Google Cloud
 cask "gcloud-cli"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
-# Tiling window manager with tree layouts
-cask "glide"
 # Graphically shows disk usage within a file system
 cask "grandperspective"
 # Free and open-source media player
@@ -235,8 +220,6 @@ cask "stats"
 cask "whatsapp"
 # Menu bar Wi-Fi monitor and diagnostics app
 cask "whyfi"
-# macOS tiling window manager
-cask "typester/yashiki/yashiki"
 mas "1Password for Safari", id: 1569813296
 mas "Amphetamine", id: 937984704
 mas "Backtrack", id: 1477089520
@@ -256,6 +239,5 @@ mas "Telegram", id: 747648890
 mas "TestFlight", id: 899247664
 mas "Xcode", id: 497799835
 go "github.com/steveyegge/gastown/cmd/gt"
-cargo "paneru"
 cargo "tauri-cli"
 uv "twitter-cli"

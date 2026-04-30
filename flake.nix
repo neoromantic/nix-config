@@ -17,6 +17,16 @@
     configuration = { pkgs, ... }: {
       determinateNix.enable = true;
 
+      determinateNix.customSettings = {
+        warn-dirty = false;
+        accept-flake-config = true;
+        extra-trusted-users = [ "@admin" "sergeypetrov" ];
+        extra-substituters = [ "https://nix-community.cachix.org" ];
+        extra-trusted-public-keys = [
+          "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        ];
+      };
+
       nixpkgs.config.allowUnfree = true;
       nixpkgs.hostPlatform = "aarch64-darwin";
 
@@ -24,7 +34,15 @@
       system.stateVersion = 6;
       system.primaryUser = "sergeypetrov";
 
-      programs.zsh.enable = true;
+      programs.zsh = {
+        enable = true;
+        enableCompletion = true;
+        enableSyntaxHighlighting = true;
+        enableFzfCompletion = true;
+        enableFzfHistory = true;
+        enableFzfGit = true;
+      };
+
       security.pam.services.sudo_local.touchIdAuth = true;
 
       environment = {
@@ -51,7 +69,66 @@
           "com.apple.mouse.tapBehavior" = 1;
           "com.apple.sound.beep.volume" = 0.0;
           "com.apple.sound.beep.feedback" = 0;
+
+          # Smart-substitution off — критично для кода/JSON/CLI в нативных полях
+          NSAutomaticDashSubstitutionEnabled = false;
+          NSAutomaticQuoteSubstitutionEnabled = false;
+          NSAutomaticCapitalizationEnabled = false;
+          NSAutomaticPeriodSubstitutionEnabled = false;
+          NSAutomaticSpellingCorrectionEnabled = false;
+          NSAutomaticInlinePredictionEnabled = false;
+
+          # Скроллбары всегда видны
+          AppleShowScrollBars = "Always";
+
+          # Cmd+Ctrl+drag за любую часть окна
+          NSWindowShouldDragOnGesture = true;
+
+          # Метрика и 24h
+          AppleICUForce24HourTime = true;
+          AppleMeasurementUnits = "Centimeters";
+          AppleMetricUnits = 1;
+          AppleTemperatureUnit = "Celsius";
+
+          # Save-диалоги развёрнуты, без iCloud-дефолта
+          NSDocumentSaveNewDocumentsToCloud = false;
+          NSNavPanelExpandedStateForSaveMode = true;
+          NSNavPanelExpandedStateForSaveMode2 = true;
+          PMPrintingExpandedStateForPrint = true;
+          PMPrintingExpandedStateForPrint2 = true;
         };
+
+        # Stage Manager и edge-tiling Sequoia — конфликтует с Aerospace
+        WindowManager = {
+          GloballyEnabled = false;
+          EnableTilingByEdgeDrag = false;
+          EnableTopTilingByEdgeDrag = false;
+          EnableTilingOptionAccelerator = false;
+          EnableStandardClickToShowDesktop = false;
+        };
+
+        controlcenter = {
+          BatteryShowPercentage = true;
+          Sound = true;
+          Bluetooth = true;
+          NowPlaying = false;
+        };
+
+        menuExtraClock = {
+          Show24Hour = true;
+          ShowSeconds = true;
+          ShowDate = 1;          # 1 = always show date
+          ShowDayOfWeek = true;
+        };
+
+        ActivityMonitor = {
+          IconType = 5;          # CPU history graph in Dock
+          SortColumn = "CPUUsage";
+          SortDirection = 0;     # descending
+          ShowCategory = 100;    # All Processes
+        };
+
+        LaunchServices.LSQuarantine = false;
 
         dock = {
           autohide = true;
@@ -70,13 +147,21 @@
           ShowPathbar = true;
           AppleShowAllExtensions = true;
           FXPreferredViewStyle = "clmv";
+          FXEnableExtensionChangeWarning = false;
+          _FXShowPosixPathInTitle = true;
         };
 
         trackpad.Clicking = true;
 
         loginwindow.LoginwindowText = "goodit.works";
 
-        screencapture.location = "~/Pictures/screenshots";
+        screencapture = {
+          location = "~/Pictures/screenshots";
+          type = "png";
+          disable-shadow = true;
+          show-thumbnail = false;
+          include-date = true;
+        };
 
         screensaver.askForPasswordDelay = 10;
 
