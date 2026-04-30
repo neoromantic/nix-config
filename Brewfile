@@ -163,8 +163,6 @@ brew "steipete/tap/peekaboo"
 brew "steipete/tap/remindctl"
 # Command-line ElevenLabs TTS with mac-style flags
 brew "steipete/tap/sag"
-# AI-supervised issue tracker for coding workflows
-brew "steveyegge/beads/bd"
 # Stripe CLI utility
 brew "stripe/stripe-cli/stripe"
 # Allows you to manage your stacked changes and submit them for review on GitHub
@@ -214,8 +212,6 @@ cask "iina"
 cask "jordanbaird-ice"
 # App to manage software development and track bugs
 cask "linear"
-# Discover, download, and run local LLMs
-cask "lm-studio"
 # Mouse utility to add gesture functions and smooth scrolling to 3rd party mice
 cask "mac-mouse-fix"
 # Native app email client for Gmail
@@ -275,5 +271,3 @@ mas "Telegram", id: 747648890
 mas "TestFlight", id: 899247664
 mas "Xcode", id: 497799835
 go "github.com/steveyegge/gastown/cmd/gt"
-cargo "tauri-cli"
-uv "twitter-cli"
